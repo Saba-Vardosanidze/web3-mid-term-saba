@@ -31,8 +31,14 @@ function greet(name: string = "Guest") {}
 
 // მაგალითი 6
 // დაწერეთ ტიპი რომელიც მოერგება ყველა ქვემოთ ჩამოთვლილ ელემენტს. მაგ: type Config = {
-
-const config1 = {
+type ConfigProps = {
+  theme: string;
+  options: {
+    fontSize: number;
+    layout: null;
+  };
+};
+const config1: ConfigProps = {
   theme: "dark",
   options: {
     fontSize: 16,
@@ -40,19 +46,38 @@ const config1 = {
   },
 };
 
-const config2 = {
+type Config2Props = {
+  theme: string;
+};
+
+const config2: Config2Props = {
   theme: "dark",
 };
 
-const config3 = {
+type Config3Props = {
+  tester: string;
+};
+
+const config3: Config3Props = {
   tester: "test",
 };
 
 // მაგალითი 7
 // დაწერეთ ტიპი რომელიც მოერგება ყველა ქვემოთ ჩამოთვლილ ელემენტს. მაგ: type MixedArray =
-const array1 = [42, "hello", {name: "Alice"}];
-const array2 = ["apple", true, {isValid: false}];
-const array3 = [];
+
+const array1: (number | string | {name: string})[] = [
+  42,
+  "hello",
+  {name: "Alice"},
+];
+
+const array2: (string | boolean | {isValid: boolean})[] = [
+  "apple",
+  true,
+  {isValid: false},
+];
+
+const array3: any[] = [];
 
 // მაგალითი 8
 // აღწერეთ რისი ტიპიზაცია ხდება არსებულ კოდში წერილობით
@@ -62,6 +87,9 @@ type Handler = {
   validate?: (input: string) => boolean;
   log?: () => void;
 };
+// ფუნქცია რომელიც იღებს და აბრუნებს სტრინგს
+// ეს იღებს პარამეტრს და აბრუნებს boolean ს
+// ეს არაბრუნებს არაფერს
 
 // მაგალითი 9
 
@@ -71,6 +99,19 @@ type User = {
   id: number;
   username: string;
   isAdmin: boolean;
+  profile: {
+    fullName: string;
+    age: number;
+    interests: string[];
+  };
+  settings: {
+    theme: string;
+    notifications: {
+      email: boolean;
+      sms: boolean;
+    };
+  };
+  metadata: undefined;
 };
 
 type profile = {};
