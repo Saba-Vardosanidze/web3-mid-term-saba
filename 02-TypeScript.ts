@@ -2,21 +2,25 @@
 
 // მაგალითი 1
 
-let name = "Alice";
+let name: string = "Alice";
 
 // მაგალითი 2
 
-let numbers = [1, 2, 3];
+let numbers: number[] = [1, 2, 3];
 
 // მაგალითი 3
 
-function multiply(a, b) {
+function multiply(a: number, b: number): number {
   return a * b;
 }
 
 // მაგალითი 4
+type UserProps = {
+  id: number;
+  name: string;
+};
 
-const user = { id: 1, name: "Alice" };
+const user: UserProps = {id: 1, name: "Alice"};
 
 // მაგალითი 5
 // რისთვის ვიყენებთ არსებული კოდში = Guest-ს :
@@ -46,8 +50,8 @@ const config3 = {
 
 // მაგალითი 7
 // დაწერეთ ტიპი რომელიც მოერგება ყველა ქვემოთ ჩამოთვლილ ელემენტს. მაგ: type MixedArray =
-const array1 = [42, "hello", { name: "Alice" }];
-const array2 = ["apple", true, { isValid: false }];
+const array1 = [42, "hello", {name: "Alice"}];
+const array2 = ["apple", true, {isValid: false}];
 const array3 = [];
 
 // მაგალითი 8
@@ -63,8 +67,13 @@ type Handler = {
 
 // შექმენით ტიპი მონაცემისთივს:
 
-type User = {};
+type User = {
+  id: number;
+  username: string;
+  isAdmin: boolean;
+};
 
+type profile = {};
 const user: User = {
   id: 101,
   username: "tech_learner",
