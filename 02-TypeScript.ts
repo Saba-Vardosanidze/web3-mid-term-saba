@@ -20,7 +20,7 @@ type UserProps = {
   name: string;
 };
 
-const user: UserProps = {id: 1, name: "Alice"};
+const userName: UserProps = {id: 1, name: "Alice"};
 
 // მაგალითი 5
 // რისთვის ვიყენებთ არსებული კოდში = Guest-ს :
@@ -70,13 +70,11 @@ const array1: (number | string | {name: string})[] = [
   "hello",
   {name: "Alice"},
 ];
-
 const array2: (string | boolean | {isValid: boolean})[] = [
   "apple",
   true,
   {isValid: false},
 ];
-
 const array3: any[] = [];
 
 // მაგალითი 8
