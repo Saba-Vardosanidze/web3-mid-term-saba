@@ -32,51 +32,38 @@ function greet(name: string = "Guest") {}
 
 // მაგალითი 6
 // დაწერეთ ტიპი რომელიც მოერგება ყველა ქვემოთ ჩამოთვლილ ელემენტს. მაგ: type Config = {
-type ConfigProps = {
-  theme: string;
-  options: {
-    fontSize: number;
-    layout: null;
+
+type Config = {
+  theme?: string;
+  tester?: string;
+  options?: {
+    fontSize?: number;
+    layout?: null;
   };
 };
-const config1: ConfigProps = {
+
+const config1: Config = {
   theme: "dark",
   options: {
     fontSize: 16,
     layout: null,
   },
 };
-
-type Config2Props = {
-  theme: string;
-};
-
-const config2: Config2Props = {
+const config2: Config = {
   theme: "dark",
 };
-
-type Config3Props = {
-  tester: string;
-};
-
-const config3: Config3Props = {
+const config3: Config = {
   tester: "test",
 };
 
 // მაგალითი 7
 // დაწერეთ ტიპი რომელიც მოერგება ყველა ქვემოთ ჩამოთვლილ ელემენტს. მაგ: type MixedArray =
 
-const array1: (number | string | {name: string})[] = [
-  42,
-  "hello",
-  {name: "Alice"},
-];
-const array2: (string | boolean | {isValid: boolean})[] = [
-  "apple",
-  true,
-  {isValid: false},
-];
-const array3 = [];
+type arrayProps = (string | number | boolean | object)[];
+
+const array1: arrayProps = [42, "hello", {name: "Alice"}];
+const array2: arrayProps = ["apple", true, {isValid: false}];
+const array3: arrayProps = [];
 
 // მაგალითი 8
 // აღწერეთ რისი ტიპიზაცია ხდება არსებულ კოდში წერილობით
