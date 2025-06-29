@@ -2,7 +2,7 @@
 
 // მაგალითი 1
 
-let name: string = "Alice";
+let Username: string = "Alice";
 
 // მაგალითი 2
 
@@ -28,6 +28,7 @@ const userName: UserProps = {id: 1, name: "Alice"};
 function greet(name: string = "Guest") {}
 
 // პასუხი:
+// ანუ თუ ფუნქციას არგუმენტი არ გადაეცა მაშინ ის ავტომატურად მიიღებს მნიშვნელობა Guest ს
 
 // მაგალითი 6
 // დაწერეთ ტიპი რომელიც მოერგება ყველა ქვემოთ ჩამოთვლილ ელემენტს. მაგ: type Config = {
@@ -75,7 +76,7 @@ const array2: (string | boolean | {isValid: boolean})[] = [
   true,
   {isValid: false},
 ];
-const array3: any[] = [];
+const array3 = [];
 
 // მაგალითი 8
 // აღწერეთ რისი ტიპიზაცია ხდება არსებულ კოდში წერილობით
